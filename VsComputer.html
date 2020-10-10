@@ -10,7 +10,7 @@
     <div id="navbarHolder">
         <nav>
             <ul>
-                <li><a href="index.html"><img id="homeImage" alt="Home" src="/Assets/Images/Pong Asylum Logo.png"/>Pong Asylum</a></li>
+                <li><a href="index.html"><img id="homeImage" alt="Home" src="Assets/Images/Pong Asylum Logo.png"/>Pong Asylum</a></li>
                 <li><a href="VsComputer.html">Vs. Computer</a></li>
             </ul>
         </nav>
@@ -39,12 +39,38 @@
                     <option value="9">9</option>
                     <option value="10">Impossible</option>
                 </select>
-                <input type="button" id="pongStartButton" value="Play" onclick="setComputerLevel()">
+                <input type="button" class="pongStartButton" value="Play" onclick="setComputerLevel()">
             </div>
         </div>
     </div>
-    <div>
-        <p class="Fantasy-Bold">Instructions</p>
-    </div>
+    <aside>
+        <div id="optionsInput">
+            <div>
+                <label class="Retro-Font labelFontSize">Ball Speed Multiplier:</label>
+                <select id="speedModifier">
+                    <option value="1.1">Default</option>
+                    <option value="1.2">2</option>
+                    <option value="1.3">3</option>
+                    <option value="1.4">4</option>
+                    <option value="1.5">5</option>
+                    <option value="1.6">6</option>
+                    <option value="1.7">7</option>
+                    <option value="1.8">8</option>
+                    <option value="1.9">9</option>
+                    <option value="2">10</option>
+                </select>
+            </div>
+            <div>
+<!--                <label class="Retro-Font labelFontSize">Paddle Length:</label>-->
+<!--                <br>-->
+<!--                <select id="paddleLength">-->
+<!--                    <option value="100">Small(Default)</option>-->
+<!--                    <option value="150">Medium</option>-->
+<!--                    <option value="200">Large</option>-->
+<!--                </select>-->
+            </div>
+            <input type="button" class="pongStartButton" value="Apply Settings" onclick="applySettings()">
+        </div>
+    </aside>
 </body>
 </html>
