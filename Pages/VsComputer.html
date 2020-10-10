@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Pong</title>
-    <link rel="stylesheet" href="CSS/site.css">
+    <link rel="stylesheet" href="../CSS/site.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="navbarHolder">
         <nav>
             <ul>
-                <li><a href="index.html"><img id="homeImage" alt="Home" src="Assets/Images/Pong Asylum Logo.png"/>Pong Asylum</a></li>
+                <li><a href="../index.html"><img id="homeImage" alt="Home" src="../Assets/Images/Pong%20Asylum%20Logo.png"/>Pong Asylum</a></li>
                 <li><a href="VsComputer.html">Vs. Computer</a></li>
             </ul>
         </nav>
@@ -22,11 +22,9 @@
     <div id="game">
         <div id="canvasWrapper">
             <canvas id="pong" width="800" height="500"></canvas>
-            <script src="JavaScript/playerVsComputer.js"></script>
+            <script src="../JavaScript/playerVsComputer.js"></script>
             <div id="pongLevelInput">
-                <p class="Fantasy-Bold">
-                    Select Computer Level
-                </p>
+                <label class="Fantasy-Bold" for="computerLevelSelect">Select Computer Level</label><br>
                 <select id="computerLevelSelect">
                     <option value="1">1</option>
                     <option value="2">2</option>
