@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS/site.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Snake</title>
+</head>
+<body>
+    <div id="navbarHolder">
+        <nav>
+            <ul>
+                <li><a href="../index.html"><img id="homeImage" alt="Home" src="../Assets/Images/Pong%20Asylum%20Logo.png"/>Pong Asylum</a></li>
+                <li><a href="VsComputer.html">Vs. Computer</a></li>
+                <li><a href="VsPlayer.html">PVP</a></li>
+                <li><a href="Snake.html">Snake</a></li>
+            </ul>
+        </nav>
+        <div id="lineUnderNavbar"></div>
+    </div>
+    <div id="gameTitle">
+        <b>Snake</b>
+    </div>
+    <div id="game">
+        <div id="canvasWrapper">
+            <canvas id="snake" width="800" height="500"></canvas>
+            <script src="../JavaScript/Snake.js"></script>
+            <!-- <div id="pongLevelInput">
+                <input type="button" class="pongStartButton" value="Play" onclick="start()">
+            </div> -->
+        </div>
+    </div>
+    <aside>
+        <div id="optionsInput">
+            <div>
+                <label for="difficultyInput" class="Retro-Font labelFontSize">Snake Speed:</label><br>
+                <select id="difficultyInput">
+                    <option value="10">1</option>
+                    <option value="15">2</option>
+                    <option value="20">3 (Default)</option>
+                    <option value="25">4</option>
+                    <option value="30">5</option>
+                    <option value="60">Zoom</option>
+                </select>
+            </div>
+            <input type="button" class="pongStartButton" value="Apply Settings" onclick="applySettings()">
+        </div>
+    </aside>
+</body>
+</html>
