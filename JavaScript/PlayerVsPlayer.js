@@ -4,26 +4,16 @@ const canvasHeight = canvas.height;
 let paddleHeight = 100;
 const paddleWidth = 10;
 let ballSpeedMultiplier = 1.1;
+let paddleSpeed = 5;
+let initialPaddleSpeed = paddleSpeed;
 
 const ctx = canvas.getContext("2d");
 
-canvas.addEventListener("mousemove", function(mousePosition)
-{
-    user.y = mousePosition.offsetY - paddleHeight/2
-    if(user.y < 0)
-    {
-        user.y = 0;
-    }
-    if(user.y + paddleHeight > canvasHeight)
-    {
-        user.y = canvasHeight - paddleHeight;
-    }
-})
 
 const user = {
     isPlayer: true,
     x: 0,
-    y: canvas.height/2 + paddleHeight/2,
+    y: canvas.height/2 - paddleHeight/2,
     width: paddleWidth,
     height: paddleHeight,
     color: "white",
@@ -39,6 +29,7 @@ const user2 = {
     color: "white",
     score: 0
 }
+
 
 const net = {
     x: canvas.width/2 - 2/2,
@@ -77,6 +68,13 @@ function fillBackground()
     }
 }
 
+function start()
+{
+    paused = false;
+    document.getElementById("pongLevelInput").style.display = "none";
+    document.getElementById("pong").style.cursor = "none";
+}
+
 function drawRect(x, y, w, h, color)
 {
     ctx.fillStyle = color;
@@ -90,6 +88,19 @@ function drawCircle(x, y, r, color)
     ctx.arc(x, y, r, 0, 360, false);
     ctx.closePath();
     ctx.fill();
+}
+
+function movePaddle(paddle, speed)
+{
+    paddle.y += speed;
+    if(paddle.y < 0)
+    {
+        paddle.y = 0;
+    }
+    if(paddle.y + paddleHeight > canvasHeight)
+    {
+        paddle.y = canvasHeight - paddleHeight;
+    }
 }
 
 function moveCircle()
@@ -113,6 +124,7 @@ function moveCircle()
         ball.velocityX = ball.speed * Math.cos(angle) * direction;
         ball.velocityY = ball.speed * Math.sin(angle);
         ball.speed += ballSpeedMultiplier;
+        paddleSpeed += ballSpeedMultiplier;
     }
     ball.x += ball.velocityX;
     ball.y += ball.velocityY;
@@ -157,6 +169,7 @@ function score(player)
     ball.x = canvasWidth/2;
     ball.y = canvasHeight/2;
     player.score += 1;
+    paddleSpeed = initialPaddleSpeed;
 }
 
 function drawText(text, x, y, color)
@@ -165,6 +178,7 @@ function drawText(text, x, y, color)
     ctx.font = "75px fantasy";
     ctx.fillText(text, x, y);
 }
+
 
 // DEBUGGING CODE
 let velocityXHolder = 0;
@@ -225,12 +239,45 @@ drawRect(user.x, user.y, user.width, user.height, user.color);
 drawRect(user2.x, user2.y, user2.width, user2.height, user2.color);
 drawCircle(ball.x, ball.y, ball.radius, ball.color);
 
+// TRACKING IF THE PLAYERS ARE PRESSING THE KEYS
+onkeydown = function(event)
+{
+    if(event.key in keyMap)
+    {
+        keyMap[event.key] = true;
+    }
+}
+onkeyup = function(event)
+{
+    if(event.key in keyMap)
+    {
+        keyMap[event.key] = false;
+    }
+}
+
 // RENDERING CODE
+let keyMap = {"q": false, "a": false, "p": false, "l": false};
 let headingTo = null;
 function render()
 {
     if(!paused)
     {
+        if(keyMap["q"] === true)
+        {
+            movePaddle(user, 0-paddleSpeed);
+        }
+        if(keyMap['a'] === true)
+        {
+            movePaddle(user, paddleSpeed);
+        }
+        if(keyMap['p'] === true)
+        {
+            movePaddle(user2, 0-paddleSpeed);
+        }
+        if(keyMap['l'] === true)
+        {
+            movePaddle(user2, paddleSpeed);
+        }
         headingTo = ball.velocityX > 0 ? user2 : user;
         fillBackground();
         drawText(user.score, canvasWidth* 1/4, canvasHeight/5);

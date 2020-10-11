@@ -15,7 +15,7 @@ aside {
     position: absolute;
     float: left;
     width: 10%;
-    height: 100%;
+    height: 50%;
     margin-left: 35px;
     top: 65px;
 }
@@ -88,6 +88,8 @@ li a img {
     color: black;
     text-decoration: none;
     box-shadow: 10px 10px 8px #555;
+    float: left;
+    margin: 60px;
 }
 .zoomButton:hover {
     transform: scale(1.5);
@@ -144,7 +146,7 @@ li a img {
 }
 
 #game {
-    height: 100%;
+    height: 70%;
     width: 100%;
     margin: auto;
     text-align: center;

@@ -33,7 +33,7 @@ canvas.addEventListener("mousemove", function(mousePosition)
 const user = {
     isPlayer: true,
     x: 0,
-    y: canvas.height/2 + paddleHeight/2,
+    y: canvas.height/2 - paddleHeight/2,
     width: paddleWidth,
     height: paddleHeight,
     color: "white",
