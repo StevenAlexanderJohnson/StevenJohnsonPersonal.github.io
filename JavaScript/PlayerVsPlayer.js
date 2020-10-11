@@ -1,3 +1,4 @@
+// Delete this
 const canvas = document.getElementById("pong");
 const canvasWidth = canvas.width;
 const canvasHeight = canvas.height;
