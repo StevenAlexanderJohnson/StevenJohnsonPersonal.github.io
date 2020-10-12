@@ -20,6 +20,12 @@ function applySettings()
     interval = setInterval(render, 1000/fps);
 }
 
+function start()
+{
+    paused = !paused;
+    document.getElementById("snakeStartButton").style.display = "none";
+}
+
 function fillBackground()
 {
     ctx.fillStyle = "black";
@@ -82,6 +88,7 @@ function resetSnake()
     apple = newApple();
     drawApple();
     drawSnake();
+    document.getElementById("snakeStartButton").style.display = "initial";
 }
 
 let keyMap = {"w": false, "a": false, "s": false, "d": true}

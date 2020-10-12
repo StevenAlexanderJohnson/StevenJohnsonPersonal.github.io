@@ -156,6 +156,19 @@ li a img {
     width: 30px;
 }
 
+/*  Snake CSS  */
+
+#snakeStartButton {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    border: rgb(255, 102, 0) 3px solid;
+    font-size: large;
+}
+
 /*  FONT CSS  */
 
 .default-font {
@@ -177,13 +190,13 @@ li a img {
 
 /*  BUTTON CSS  */
 
-.pongStartButton {
+.startButton {
     border: rgb(255,102,0);
     border-radius: 4px;
     font-family: fantasy,monospace;
     transition-duration: .4s;
 }
-.pongStartButton:hover {
+.startButton:hover {
     background-color: rgb(255,102,0);
 }
 

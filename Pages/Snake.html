@@ -25,9 +25,7 @@
         <div id="canvasWrapper">
             <canvas id="snake" width="800" height="500"></canvas>
             <script src="../JavaScript/Snake.js"></script>
-            <!-- <div id="pongLevelInput">
-                <input type="button" class="pongStartButton" value="Play" onclick="start()">
-            </div> -->
+            <input type="button" class="startButton" id="snakeStartButton" value="Start" onclick="start()">
         </div>
     </div>
     <aside>
@@ -37,7 +35,7 @@
                 <select id="difficultyInput">
                     <option value="10">1</option>
                     <option value="15">2</option>
-                    <option value="20">3 (Default)</option>
+                    <option value="20" selected>3 (Default)</option>
                     <option value="25">4</option>
                     <option value="30">5</option>
                     <option value="60">Zoom</option>
