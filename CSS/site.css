@@ -188,6 +188,13 @@ li a img {
     font-weight: bold;
 }
 
+.shadowOutline-White {
+    text-shadow: -1px 1px 0 #fff,
+                  1px 1px #fff,
+                  1px -1px #fff,
+                  -1px -1px #fff;
+}
+
 /*  BUTTON CSS  */
 
 .startButton {
