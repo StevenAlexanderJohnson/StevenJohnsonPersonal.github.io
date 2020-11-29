@@ -5,6 +5,8 @@
     <title>Phasmophobia Assistant</title>
     <link rel="stylesheet" href="../CSS/site.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="../JavaScript/PhasmophobiaAssistant.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="navbarHolder">
@@ -22,7 +24,41 @@
 <div id="gameTitle" style="font-size: 80px">
     <b>Phasmophobia</b>
 </div>
-<div style="width:80%">
+<div id="phasmophobiaInputWrapper">
+    <label for="evidence1Input">1:</label>
+    <select name="evidence1Input" id="evidence1Input" onchange="searchGhost()">
+        <option value="-1" selected>Select Evidence</option>
+        <option value="Ghost Orb">Ghost Orb</option>
+        <option value="Spirit Box">Spirit Box</option>
+        <option value="Fingerprints">Fingerprints</option>
+        <option value="EMF Level 5">EMF Level 5</option>
+        <option value="Freezing Temperatures">Freezing Temperatures</option>
+        <option value="Ghost Writing">Ghost Writing</option>
+    </select>
+    <br/>
+    <label for="evidence2Input">2:</label>
+    <select name="evidence2Input" id="evidence2Input" onchange="searchGhost()">
+        <option value="-1" selected>Select Evidence</option>
+        <option value="Ghost Orb">Ghost Orb</option>
+        <option value="Spirit Box">Spirit Box</option>
+        <option value="Fingerprints">Fingerprints</option>
+        <option value="EMF Level 5">EMF Level 5</option>
+        <option value="Freezing Temperatures">Freezing Temperatures</option>
+        <option value="Ghost Writing">Ghost Writing</option>
+    </select>
+    <br/>
+    <label for="evidence3Input">3:</label>
+    <select name="evidence3Input" id="evidence3Input" onchange="searchGhost()">
+        <option value="-1" selected >Select Evidence</option>
+        <option value="Ghost Orb">Ghost Orb</option>
+        <option value="Spirit Box">Spirit Box</option>
+        <option value="Fingerprints">Fingerprints</option>
+        <option value="EMF Level 5">EMF Level 5</option>
+        <option value="Freezing Temperatures">Freezing Temperatures</option>
+        <option value="Ghost Writing">Ghost Writing</option>
+    </select>
+</div>
+<div id="phasmophobiaTableWrapper">
     <table id="phasmophobiaTable">
         <thead id="tableHeader">
         <tr>
@@ -31,7 +67,7 @@
             <th colspan="3">Evidence</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="phasmophobiaTableBody">
         <tr class="tableRow">
             <td>Spirit</td>
             <td>It has no special strengths. Smudge sticks make it have to wait three minutes to hunt.</td>

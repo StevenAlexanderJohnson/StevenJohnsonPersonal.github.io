@@ -74,8 +74,19 @@ li a img {
 
 /* TABLE CSS */
 table {
-    background-color: #000;
+    background-color: rgb(169,105,70);
 }
+tbody {
+    text-align: center;
+    display: block;
+    overflow: auto;
+}
+thead, tbody tr{
+    display:table;
+    width: 100%;
+    table-layout: fixed;
+}
+
 table td, th {
     border: 1px solid #ddd;
     padding: 8px;
@@ -234,20 +245,35 @@ table tr:hover {
 
 /* Phasmophobia Assistant Page */
 
+#phasmophobiaInputWrapper{
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    float: left;
+    margin: 10px 10px 10px 100px;
+}
+#phasmophobiaInputWrapper select{
+    font-family: "Press Start 2P", monospace;
+    margin-top: 5px;
+    font-size: 8px;
+}
+#phasmophobiaInputWrapper label {
+    margin-top: 5px;
+}
+
 #phasmophobiaTable{
+    border: 2px solid black;
+    width: 800px;
+    overflow-x: hidden;
     text-align: center;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
-#phasmophobiaTable tbody {
-    height: 300px;
-    overflow: auto;
+#phasmophobiaTableBody {
+    height:400px;
+    overflow-x: hidden;
 }
-
-#phasmophobiaTable tbody {
-    height: 300px !important;
-    overflow:auto;
-}
-
 #tableHeader {
+    width: calc(100% - 17px);
     font-family: "Press Start 2P", monospace;
     font-size: 10px;
 }
