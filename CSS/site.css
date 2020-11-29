@@ -254,10 +254,8 @@ table tr:hover {
 #phasmophobiaInputWrapper select{
     font-family: "Press Start 2P", monospace;
     margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 8px;
-}
-#phasmophobiaInputWrapper label {
-    margin-top: 5px;
 }
 
 #phasmophobiaTable{

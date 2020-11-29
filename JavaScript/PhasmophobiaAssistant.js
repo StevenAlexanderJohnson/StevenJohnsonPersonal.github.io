@@ -29,3 +29,14 @@ function searchGhost()
         }
     })
 }
+
+function resetSearch()
+{
+    $('#phasmophobiaInputWrapper').find('select').each(
+        function()
+        {
+            $(this).val('-1');
+        }
+    )
+    searchGhost();
+}
